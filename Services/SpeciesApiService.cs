@@ -136,7 +136,9 @@ public class SpeciesApiService
             ScientificName = t.Name,
             CommonName = t.PreferredCommonName,
             Rank = t.Rank,
-            PhotoUrl = t.DefaultPhoto?.MediumUrl ?? t.DefaultPhoto?.SquareUrl ?? t.DefaultPhoto?.OriginalUrl,
+            PhotoUrl = t.DefaultPhoto?.MediumUrl
+                       ?? t.DefaultPhoto?.SquareUrl
+                       ?? t.DefaultPhoto?.OriginalUrl,
             WikipediaSummary = t.WikipediaSummary,
             WikipediaUrl = t.WikipediaUrl,
             AncestorIds = t.AncestorIds ?? new List<int>()

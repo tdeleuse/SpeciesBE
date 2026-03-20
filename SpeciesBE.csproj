@@ -1,15 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
+    <!-- SDK will generate assembly attributes. If you have custom AssemblyInfo.cs files,
+         remove or adjust them instead of disabling generation globally. -->
   </PropertyGroup>
 
+  <!-- Removed accidental inclusion of the test project file as content.
+       The test project should be a separate project and is already referenced by the test project's ProjectReference.
+  -->
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.3" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0" PrivateAssets="all" />
   </ItemGroup>
+  <!-- Ensure any test project/folder inside the repository is not compiled into the app.
+       Use a broad remove pattern to cover nested locations. -->
+  <!-- Tests are in their own project `SpeciesBE.Tests` at solution root; no exclusions needed. -->
+  <!-- No test sources are included in the app project. Tests live in the separate
+       `SpeciesBE.Tests` project at the solution level. -->
 
 </Project>
