@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="../SpeciesBE.Tests/SpeciesBE.Tests.csproj" />
   <Project Path="SpeciesBE.csproj" />
 </Solution>
